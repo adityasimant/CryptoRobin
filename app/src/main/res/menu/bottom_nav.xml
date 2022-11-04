@@ -2,20 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/HomeFragment"
+    <item android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/MarketFragment"
+    <item android:id="@+id/marketFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_insert_chart_24"
         android:title="Market"
         app:showAsAction="always"/>
 
 
-    <item android:id="@+id/WatchlistFragment"
+    <item android:id="@+id/watchlistFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_bookmark_24"
         android:title="Watchlist"
