@@ -22,9 +22,8 @@
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        app:backgroundColor="@color/purple_700"
+        app:backgroundColor="@color/LightBlack"
         android:elevation="12dp"
-        app:iconMargin="8dp"
         app:iconSize="24dp"
         android:contentDescription="Menu"
         app:indicatorRadius="8dp"
@@ -32,7 +31,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav"
-        app:textSize="14sp" />
+        app:textSize="14sp"
+        app:textColor="@color/teal"
+        app:iconTint="@color/white"
+        app:iconTintActive="@color/teal"
+        />
 
 
 
