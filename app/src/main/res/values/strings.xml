@@ -5,4 +5,11 @@
     <string name="not_found">Data not found</string>
     <string name="search_hint">Search </string>
     <string name="empty_watchlist">Watchlist is empty </string>
+
+    <string name="_1m">1 month </string>
+    <string name="_1w">1 week </string>
+    <string name="_1d">1 day </string>
+    <string name="_1h">1 hour </string>
+    <string name="_15m">15 min</string>
+    <string name="_4h">4 hours </string>
 </resources>
