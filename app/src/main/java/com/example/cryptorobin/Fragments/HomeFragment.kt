@@ -5,14 +5,20 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.viewpager2.widget.ViewPager2
+import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.cryptorobin.R
+import com.example.cryptorobin.adapters.TopLossGainPagerAdapter
 import com.example.cryptorobin.adapters.TopMarketAdapter
 import com.example.cryptorobin.api.ApiInterface
 import com.example.cryptorobin.api.ApiUtilities
 import com.example.cryptorobin.databinding.FragmentHomeBinding
 import com.example.cryptorobin.models.MarketModel
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -35,36 +41,45 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
-//        getMyData()
         getTopCurrencyList()
+        setTabLayout()
         return binding.root
     }
 
-//     fun getMyData() {
-//        val retrofitBuilder = Retrofit.Builder()
-//            .baseUrl("https://api.coinmarketcap.com/")
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//            .create(ApiInterface::class.java)
-//
-//        val retrofitData = retrofitBuilder.getMarketData()
-//        retrofitData.enqueue(object : Callback<List<MarketModel>?> {
-//            override fun onResponse(
-//                call: Call<List<MarketModel>?>,
-//                response: Response<List<MarketModel>?>
-//            ) {
-//                val responseBody = Response.success()
-//            }
-//
-//            override fun onFailure(call: Call<List<MarketModel>?>, t: Throwable) {
-//                TODO("Not yet implemented")
-//            }
-//        })
-//
-//    }
+    private fun setTabLayout() {
+        val adapter = TopLossGainPagerAdapter(this)
+        binding.contentViewPager.adapter = adapter
+
+        binding.contentViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+
+                if(position == 0){
+                    binding.topGainIndicator.visibility = VISIBLE
+                    binding.topLoseIndicator.visibility = GONE
+
+                }else{
+                    binding.topGainIndicator.visibility = GONE
+                    binding.topLoseIndicator.visibility = VISIBLE
+
+                }
+
+            }
+        })
+
+        TabLayoutMediator(binding.tabLayout, binding.contentViewPager){
+            tab, position ->
+            var title = if (position == 0){
+                "Top Gainers"
+            }else{
+                "Top Losers"
+            }
+            tab.text = title
+        }.attach()
 
 
 
+    }
 
     private fun getTopCurrencyList() {
 
