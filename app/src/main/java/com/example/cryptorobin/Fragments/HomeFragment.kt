@@ -77,8 +77,6 @@ class HomeFragment : Fragment() {
             tab.text = title
         }.attach()
 
-
-
     }
 
     private fun getTopCurrencyList() {
