@@ -19,4 +19,4 @@ data class CryptoCurrency(
     val symbol: String,
     val tags: List<String>,
     val totalSupply: Double
-)
+) : java.io.Serializable

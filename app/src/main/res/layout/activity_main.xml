@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Yellowbrown"
     tools:context=".MainActivity">
 
     <fragment
@@ -21,8 +22,8 @@
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:backgroundColor="@color/LightBlack"
+        android:layout_height="59dp"
+        app:backgroundColor="#101010"
         android:elevation="12dp"
         app:iconSize="24dp"
         android:contentDescription="Menu"
@@ -32,9 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav"
         app:textSize="14sp"
-        app:textColor="@color/teal"
+        app:cornerRadius="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:textColor="@color/white"
         app:iconTint="@color/white"
-        app:iconTintActive="@color/teal"
+        app:iconTintActive="@color/white"
         />
 
 
