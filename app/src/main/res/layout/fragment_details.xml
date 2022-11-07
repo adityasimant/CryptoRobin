@@ -69,6 +69,8 @@
             android:id="@+id/detailChangeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/active_button"
             android:layout_marginTop="6dp"
             android:textColor="#4CAF50"
             android:textSize="18sp"

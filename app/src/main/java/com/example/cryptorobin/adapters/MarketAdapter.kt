@@ -51,7 +51,7 @@ class MarketAdapter(var context: Context, var list : List<CryptoCurrency>) :
         }
 
 
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             findNavController(it).navigate(
                 HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item)
             )
