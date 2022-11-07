@@ -8,11 +8,13 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cryptorobin.Fragments.HomeFragmentDirections
+import com.example.cryptorobin.Fragments.MarketFragment
+import com.example.cryptorobin.Fragments.MarketFragmentDirections
 import com.example.cryptorobin.R
 import com.example.cryptorobin.databinding.CurrencyItemLayoutBinding
 import com.example.cryptorobin.models.CryptoCurrency
 
-class MarketAdapter(var context: Context, var list : List<CryptoCurrency>) :
+class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var type: String) :
     RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
 
     inner class MarketViewHolder(view : View) : RecyclerView.ViewHolder(view){
@@ -57,9 +59,20 @@ class MarketAdapter(var context: Context, var list : List<CryptoCurrency>) :
 
 
         holder.itemView.setOnClickListener {
-            findNavController(it).navigate(
-                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item)
-            )
+
+            if (type == "home"){
+                findNavController(it).navigate(
+                    HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item)
+                )
+            }
+            else if(type == "market"){
+                findNavController(it).navigate(
+                    MarketFragmentDirections.actionMarketFragmentToDetailsFragment(item)
+                )
+
+            }
+
+
         }
 
 

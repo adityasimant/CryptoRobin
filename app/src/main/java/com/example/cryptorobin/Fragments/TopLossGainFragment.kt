@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
-import com.example.cryptorobin.R
 import com.example.cryptorobin.adapters.MarketAdapter
 import com.example.cryptorobin.api.ApiInterface
 import com.example.cryptorobin.api.ApiUtilities
@@ -62,14 +59,22 @@ class TopLossGainFragment : Fragment() {
                         for (i in 0..9){
                             list.add(dataItem[i])
                         }
-                        binding.topGainLoseRecyclerView.adapter =MarketAdapter(requireContext(), list)
+                        binding.topGainLoseRecyclerView.adapter =MarketAdapter(
+                            requireContext(),
+                            list,
+                            "home"
+                        )
 
                     }else{
                         list.clear()
                         for (i in 0..9){
                             list.add(dataItem[dataItem.size-1-i])
                         }
-                        binding.topGainLoseRecyclerView.adapter =MarketAdapter(requireContext(), list)
+                        binding.topGainLoseRecyclerView.adapter =MarketAdapter(
+                            requireContext(),
+                            list,
+                            "home"
+                        )
 
 
                     }

@@ -9,7 +9,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import com.example.cryptorobin.R
 import com.example.cryptorobin.adapters.MarketAdapter
 import com.example.cryptorobin.api.ApiInterface
 import com.example.cryptorobin.api.ApiUtilities
@@ -35,7 +34,7 @@ class MarketFragment : Fragment() {
 
         list = listOf()
 
-        adapter = MarketAdapter(requireContext(), list)
+        adapter = MarketAdapter(requireContext(), list, "market")
         binding.currencyRecyclerView.adapter = adapter
 
         lifecycleScope.launch(Dispatchers.IO){
