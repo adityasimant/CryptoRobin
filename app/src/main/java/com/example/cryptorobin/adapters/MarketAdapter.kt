@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.cryptorobin.Fragments.HomeFragmentDirections
-import com.example.cryptorobin.Fragments.MarketFragment
-import com.example.cryptorobin.Fragments.MarketFragmentDirections
+import com.example.cryptorobin.Fragments.*
 import com.example.cryptorobin.R
 import com.example.cryptorobin.databinding.CurrencyItemLayoutBinding
 import com.example.cryptorobin.models.CryptoCurrency
@@ -69,7 +67,11 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var ty
                 findNavController(it).navigate(
                     MarketFragmentDirections.actionMarketFragmentToDetailsFragment(item)
                 )
-
+            }
+            else{
+                findNavController(it).navigate(
+                    WatchlistFragmentDirections.actionWatchlistFragmentToDetailsFragment(item)
+                )
             }
 
 

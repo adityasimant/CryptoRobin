@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.example.cryptorobin.Fragments.HomeFragment
+import com.example.cryptorobin.Fragments.HomeFragmentDirections
 import com.example.cryptorobin.R
 import com.example.cryptorobin.databinding.TopCurrencyLayoutBinding
 import com.example.cryptorobin.models.CryptoCurrency
@@ -46,7 +49,11 @@ class TopMarketAdapter(var context: Context, val list: List<CryptoCurrency>) : R
         }
 
 
-
+        holder.itemView.setOnClickListener{
+            Navigation.findNavController(it).navigate(
+                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item)
+            )
+        }
 
 
 

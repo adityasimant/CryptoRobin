@@ -1,18 +1,19 @@
 package com.example.cryptorobin.Fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.cryptorobin.R
 import com.example.cryptorobin.databinding.FragmentDetailsBinding
 import com.example.cryptorobin.models.CryptoCurrency
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class DetailsFragment : Fragment() {
 
@@ -33,10 +34,65 @@ class DetailsFragment : Fragment() {
         setUpDetails(data)
         loadChart(data)
         setButtonOnClick(data)
+        addToWatchlist(data)
+
+
 
         return binding.root
     }
 
+
+    var watchlist : ArrayList<String>? = null
+    var watchListIsChecked = false
+
+
+    private fun addToWatchlist(data: CryptoCurrency) {
+        readData()
+        watchListIsChecked = if(watchlist!!.contains(data.symbol)){
+            binding.addWatchlistButton.setImageResource(R.drawable.ic_star)
+            true
+        }
+        else{
+            binding.addWatchlistButton.setImageResource(R.drawable.ic_star_outline)
+            false
+        }
+
+        binding.addWatchlistButton.setOnClickListener{
+            watchListIsChecked = if (!watchListIsChecked){
+                if (!watchlist!!.contains(data.symbol)){
+                    watchlist!!.add(data.symbol)
+                }
+                storeData()
+                binding.addWatchlistButton.setImageResource(R.drawable.ic_star)
+                true
+            }
+            else{
+                binding.addWatchlistButton.setImageResource(R.drawable.ic_star_outline)
+                watchlist!!.remove(data.symbol)
+                storeData()
+                false
+            }
+        }
+
+    }
+
+
+    private fun storeData(){
+        val sharedPreferences = requireContext().getSharedPreferences("watchlist", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        val gson = Gson()
+        val json = gson.toJson(watchlist)
+        editor.putString("watchlist", json)
+        editor.apply()
+    }
+
+    private fun readData() {
+        val sharedPreferences = requireContext().getSharedPreferences("watchlist", Context.MODE_PRIVATE)
+        val gson = Gson()
+        val json = sharedPreferences.getString("watchlist",ArrayList<String>().toString())
+        val type = object : TypeToken<ArrayList<String>>(){}.type
+        watchlist = gson.fromJson(json,type)
+    }
 
 
     private fun setButtonOnClick(data: CryptoCurrency) {
