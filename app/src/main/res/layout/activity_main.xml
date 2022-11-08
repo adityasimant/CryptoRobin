@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Yellowbrown"
+    android:background="@color/DarkBlue"
     tools:context=".MainActivity">
 
     <fragment
@@ -23,7 +23,7 @@
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="59dp"
-        app:backgroundColor="#101010"
+        app:backgroundColor="@color/Orange"
         android:elevation="12dp"
         app:iconSize="24dp"
         android:contentDescription="Menu"
@@ -34,8 +34,6 @@
         app:menu="@menu/bottom_nav"
         app:textSize="14sp"
         app:cornerRadius="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         app:textColor="@color/white"
         app:iconTint="@color/white"
         app:iconTintActive="@color/white"

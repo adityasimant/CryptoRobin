@@ -16,4 +16,10 @@
     <color name="AlmostBlack">#1A1A1A</color>
     <color name="Yellowbrown">#E1D5C9</color>
     <color name="DarkYellowbrown">#bc6c25</color>
+
+
+
+    <color name="DarkBlue">#1D2027</color>
+    <color name="Grey">#3F4144</color>
+    <color name="Orange">#EF550A</color>
 </resources>
