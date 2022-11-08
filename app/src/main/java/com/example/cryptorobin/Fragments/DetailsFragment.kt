@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.cryptorobin.R
@@ -35,6 +36,13 @@ class DetailsFragment : Fragment() {
         loadChart(data)
         setButtonOnClick(data)
         addToWatchlist(data)
+
+        binding.backStackButton.setOnClickListener {
+
+            Navigation.findNavController(it).navigate(
+                DetailsFragmentDirections.actionDetailsFragmentToHomeFragment()
+            )
+        }
 
 
 
@@ -75,6 +83,7 @@ class DetailsFragment : Fragment() {
         }
 
     }
+
 
 
     private fun storeData(){
