@@ -18,7 +18,13 @@
     <item android:id="@+id/watchlistFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_bookmark_24"
-        android:title="Watchlist"
+        android:title="Saved"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/NewsFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_article_24"
+        android:title="News"
         app:showAsAction="always"/>
 
 

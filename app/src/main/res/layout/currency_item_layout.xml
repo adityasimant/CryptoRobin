@@ -36,7 +36,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/currencyPriceTextView"
                 app:layout_constraintStart_toEndOf="@+id/currencyImageView"
