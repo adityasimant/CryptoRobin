@@ -23,7 +23,7 @@
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="59dp"
-        app:backgroundColor="@color/Orange"
+        app:backgroundColor="@color/AlmostBlack"
         android:elevation="12dp"
         app:iconSize="24dp"
         android:contentDescription="Menu"
