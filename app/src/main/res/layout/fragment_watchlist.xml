@@ -8,6 +8,8 @@
     android:layout_height="match_parent"
     android:background="@color/DarkBlue">
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
@@ -18,20 +20,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:background="@drawable/active_button"
+            android:id="@+id/savedtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saved"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito"
+            android:drawableEnd="@drawable/ic_bookmark"
+            android:drawablePadding="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/watchlistRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginTop="12dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/currency_item_layout"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/savedtext"
+            tools:listitem="@layout/currency_item_layout">
 
         </androidx.recyclerview.widget.RecyclerView>
 

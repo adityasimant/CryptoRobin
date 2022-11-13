@@ -19,25 +19,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav" />
 
-    <me.ibrahimsn.lib.SmoothBottomBar
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        app:backgroundColor="@color/AlmostBlack"
-        android:elevation="12dp"
-        app:iconSize="24dp"
-        android:contentDescription="Menu"
-        app:indicatorRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav"
-        app:textSize="14sp"
-        app:cornerRadius="10dp"
-        app:textColor="@color/white"
-        app:iconTint="@color/white"
-        app:iconTintActive="@color/white"
-        />
+
+
+        <me.ibrahimsn.lib.SmoothBottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:contentDescription="Menu"
+            android:elevation="12dp"
+            app:backgroundColor="#1A1A1A"
+            app:cornerRadius="10dp"
+            app:iconSize="24dp"
+            app:iconTint="@color/white"
+            app:iconTintActive="@color/white"
+            app:indicatorRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav"
+            app:textColor="@color/white"
+            app:textSize="14sp" />
+
 
 
 
