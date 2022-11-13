@@ -32,7 +32,7 @@ CryptoRobin is an android based mobile application which provides you with lates
 
 Used API from [Coinmarketcap](https://coinmarketcap.com)
 
-[Download APK](https://github.com/adityasimant/CryptoRobin/releases/download/V1/CryptoRobinV1.apk) (For android)
+[Download APK](https://github.com/adityasimant/CryptoRobin/releases/download/V1/CryptoRobinV1.apk)(For android)
 
 
 
